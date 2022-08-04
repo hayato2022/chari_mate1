@@ -1,24 +1,35 @@
-# README
+# <チャリメイト>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+サイクリングをしたルートのなかで、自分が気に入った風景などの写真を投稿、シャアができる
+自分が走ったルートの距離のカロリーを知ることが出来る
 
-Things you may want to cover:
+### テーマを選んだ理由
+サイクリングが好きなのですが、自分が走行した距離のカロリーを表示してくれるアプリはよく見かけるのですが、
+自分が走ったルートの中で気に入った風景、場所などを
+同じサイクリング仲間同士でシャアできるものはあまり見かけないので、このようなアプリがあれば楽しいかなと思いこのテーマにしました。
 
-* Ruby version
+### ターゲットユーザ
+サイクリングが好きな人
 
-* System dependencies
+### 主な利用シーン
+他の人の投稿したものを見たり、自分が走ったルートのなかで、気に入った風景、場所などを投稿できる
+走行距離に対してのカロリーを知ることができるので、ダイエットなどにも使える
 
-* Configuration
+### 実装機能リストurl
+[実装機能リスト](https://docs.google.com/spreadsheets/d/1w4VqVWG3g8RHRKAvXVQbiDxOGzizhzcg_lqpdf6uddc/edit?usp=sharing)
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
