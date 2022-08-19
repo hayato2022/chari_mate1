@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
+
   get 'homes/top'
   get 'homes/about'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
