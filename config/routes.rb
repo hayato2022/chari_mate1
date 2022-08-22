@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
+# ログアウトの際method の delete が get になってしまうので以下を追記
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
 
   scope module: :public do
