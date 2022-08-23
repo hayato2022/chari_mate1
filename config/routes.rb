@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'posts/new'
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/edit'
+    get 'users/show'
+    get 'users/edit'
+  end
 
 
 # ユーザー側
@@ -10,6 +18,9 @@ Rails.application.routes.draw do
 # ログアウトの際method の delete が get になってしまうので以下を追記
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
+    # ゲストログイン
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    get 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
 
