@@ -18,9 +18,21 @@ class Public::PostsController < ApplicationController
   end
 
   def index
+    @tag_lists = Tag.all
+    
+    if params[:tag_id]
+      @tag = Tag.find(params[:tag_id])
+      @posts = @tag.posts.all
+    else
+      @posts = Post.all
+    end
+
   end
 
   def show
+  end
+
+  def search
   end
 
   def edit
@@ -29,7 +41,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body,:image)
+    params.require(:post).permit(:body, :image, :name, :tag_id)
   end
 
 end

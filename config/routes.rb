@@ -29,6 +29,11 @@ Rails.application.routes.draw do
     get "/about" => "homes#about"
     resources :posts
     resources :users, only: [:show, :edit, :update]
+
+    #タグによって絞り込んだ投稿を表示するアクションへのルーティング
+    resources :tags do
+      get 'posts', to: 'posts#search'
+    end
   end
 
 
