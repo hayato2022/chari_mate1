@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   def save_tag(sent_tags)
     # タグが存在していれば、タグの名前を配列として取得
-    current_tags = self.tag.pluck(:name) unless self.tags.nill?
+    current_tags = self.tags.pluck(:name) unless self.tags.nil?
     # 「今あるタグ」から「新たに送られてきたタグ」を引いて、「old_tags」に代入
     old_tags = current_tags - sent_tags
     # 「送信されてきたタグ」から「現在存在するタグ」を除いたタグをnew_tagsとする
@@ -26,7 +26,7 @@ class Post < ApplicationRecord
   end
 
   def get_image(width, height)
-    unless image.attached?
+   unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
       image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end

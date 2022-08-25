@@ -18,8 +18,8 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @tag_lists = Tag.all
-    
+     @tag_list = Tag.all
+     
     if params[:tag_id]
       @tag = Tag.find(params[:tag_id])
       @posts = @tag.posts.all
@@ -41,7 +41,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :image, :name, :tag_id)
+    params.require(:post).permit(:body, :image, :tag_id)
   end
 
 end
