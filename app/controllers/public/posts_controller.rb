@@ -19,7 +19,7 @@ class Public::PostsController < ApplicationController
 
   def index
      @tag_list = Tag.all
-     
+
     if params[:tag_id]
       @tag = Tag.find(params[:tag_id])
       @posts = @tag.posts.all
@@ -30,6 +30,8 @@ class Public::PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @post_tags = @post.tags
   end
 
   def search
