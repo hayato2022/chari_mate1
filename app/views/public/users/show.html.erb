@@ -1,2 +1,12 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <h4><%= @user.name %></h4>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= image_tag @user.get_profile_image(150,150) %>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>

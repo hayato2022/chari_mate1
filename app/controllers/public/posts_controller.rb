@@ -38,6 +38,24 @@ class Public::PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    tag_list = params[:post][:name].split(',')
+    if @post.update(post_params)
+      @post.save_tag(tag_list)
+      redirect_to post_path(@post.id), notice: '編集完了しました'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @post = Post.find(post_params)
+    @post.destroy
+    redirect_to posts_path
   end
 
   private

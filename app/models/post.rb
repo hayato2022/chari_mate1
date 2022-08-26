@@ -12,12 +12,10 @@ class Post < ApplicationRecord
     old_tags = current_tags - sent_tags
     # 「送信されてきたタグ」から「現在存在するタグ」を除いたタグをnew_tagsとする
     new_tags = sent_tags - current_tags
-
     # 古いタグを消す
     old_tags.each do |old|
       self.tags.delete Tag.find_by(name: old)
     end
-
     # 新しいタグを保存
     new_tags.each do |new|
       new_post_tag = Tag.find_or_create_by(name: new)
