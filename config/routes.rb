@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'posts/new'
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
-    get 'users/show'
-    get 'users/edit'
-  end
+
 
 
 # ユーザー側
@@ -28,7 +21,11 @@ Rails.application.routes.draw do
     root to: "homes#top"
     get "/about" => "homes#about"
     resources :posts
+    get "users/unsubscribe" => "users#unsubscribe"
+    patch "users/withdrawal" => "users#withdrawal"
     resources :users, only: [:show, :edit, :update]
+
+
 
     #タグによって絞り込んだ投稿を表示するアクションへのルーティング
     resources :tags do
